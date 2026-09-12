@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Michels Apps</title>
+<meta name="description" content="Almost as strong as his Abs 💪">
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Michels Apps">
+<meta name="theme-color" content="#131313">
+<link rel="manifest" href="/manifest.json">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header>
+  <div class="brand" role="button" tabindex="0" aria-label="Reload Michels Apps">
+    <img src="/icon-192.png" alt="" class="brand-logo">
+    <div class="brand-text">
+      <span class="brand-title">Michels Apps</span>
+      <span class="brand-subtitle">Almost as strong as his Abs 💪</span>
+    </div>
+  </div>
+  <div class="header-actions">
+    <button type="button" class="icon-btn" id="fullscreenBtn" aria-label="Toggle fullscreen">
+      <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M4 4h6v2H6v4H4V4zm10 0h6v6h-2V6h-4V4zM4 14h2v4h4v2H4v-6zm16 0v6h-6v-2h4v-4h2z"/></svg>
+    </button>
+    <button type="button" class="icon-btn" id="menuBtn" aria-label="Menu" aria-haspopup="true" aria-expanded="false">
+      <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="5" r="2" fill="currentColor"/><circle cx="12" cy="12" r="2" fill="currentColor"/><circle cx="12" cy="19" r="2" fill="currentColor"/></svg>
+    </button>
+    <div class="dropdown" id="dropdownMenu" hidden>
+      <button type="button" class="dropdown-item" id="darkModeToggle">
+        <span id="darkModeLabel">Light mode</span>
+      </button>
+      <button type="button" class="dropdown-item" id="settingsBtn">Settings</button>
+      <button type="button" class="dropdown-item" id="aboutBtn">About</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="toolbar">
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24" width="16" height="16" class="search-icon"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/></svg>
+      <input type="search" id="searchInput" placeholder="Search apps…" aria-label="Search apps">
+    </div>
+    <label class="sort-wrap">
+      <span class="sr-only">Sort by</span>
+      <select id="sortSelect" aria-label="Sort apps">
+        <option value="alpha">Alphabetical</option>
+        <option value="custom">Custom order</option>
+      </select>
+    </label>
+  </div>
+
+  <section id="favoritesSection" hidden>
+    <h2 class="section-title">Favorites</h2>
+    <div class="grid" id="favoritesGrid"></div>
+  </section>
+
+  <section id="allSection">
+    <h2 class="section-title" id="allSectionTitle">All Apps</h2>
+    <p class="drag-hint" id="dragHint" hidden>Drag cards to reorder.</p>
+    <div class="grid" id="allGrid"></div>
+    <p class="empty-state" id="emptyState" hidden>No apps match your search.</p>
+  </section>
+</main>
+
+<div class="modal-backdrop" id="settingsModal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+    <h2 id="settingsTitle">Settings</h2>
+    <p>Reset your favorites and custom card order back to defaults.</p>
+    <div class="modal-actions">
+      <button type="button" class="btn-secondary" id="closeSettings">Close</button>
+      <button type="button" class="btn-danger" id="resetBtn">Reset favorites &amp; order</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="aboutModal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="aboutTitle">
+    <h2 id="aboutTitle">Michels Apps</h2>
+    <p>Almost as strong as his Abs 💪</p>
+    <p class="version-line">Version <span id="hubVersion">0.1.0</span></p>
+    <div class="modal-actions">
+      <button type="button" class="btn-secondary" id="closeAbout">Close</button>
+    </div>
+  </div>
+</div>
+
+<template id="cardTemplate">
+  <article class="card">
+    <button type="button" class="fav-btn" aria-label="Toggle favorite">
+      <svg viewBox="0 0 24 24" width="18" height="18" class="star-outline"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3.5l2.6 5.6 6 .7-4.5 4.2 1.2 6-5.3-3-5.3 3 1.2-6-4.5-4.2 6-.7z"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" class="star-filled"><path fill="currentColor" d="M12 3.5l2.6 5.6 6 .7-4.5 4.2 1.2 6-5.3-3-5.3 3 1.2-6-4.5-4.2 6-.7z"/></svg>
+    </button>
+    <span class="drag-handle" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="16" height="16"><circle cx="9" cy="6" r="1.4" fill="currentColor"/><circle cx="15" cy="6" r="1.4" fill="currentColor"/><circle cx="9" cy="12" r="1.4" fill="currentColor"/><circle cx="15" cy="12" r="1.4" fill="currentColor"/><circle cx="9" cy="18" r="1.4" fill="currentColor"/><circle cx="15" cy="18" r="1.4" fill="currentColor"/></svg>
+    </span>
+    <a class="card-link" href="#" target="_blank" rel="noopener">
+      <div class="card-icon-wrap">
+        <img class="card-icon" alt="">
+        <div class="card-icon-fallback" hidden></div>
+      </div>
+      <div class="card-body">
+        <div class="card-title-row">
+          <span class="card-title"></span>
+          <span class="badge" hidden></span>
+        </div>
+        <span class="card-subtitle"></span>
+        <span class="card-description"></span>
+      </div>
+    </a>
+  </article>
+</template>
+
+<script src="/script.js"></script>
+</body>
+</html>

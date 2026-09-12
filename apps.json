@@ -1,0 +1,98 @@
+[
+  {
+    "id": "jpg75",
+    "name": "JPG75 is Enough",
+    "subtitle": "Quality is negotiable",
+    "description": "Image-to-JPG converter.",
+    "url": "https://jpg75.michels.world",
+    "version": null
+  },
+  {
+    "id": "mixel",
+    "name": "Mixel",
+    "subtitle": "Pixels with commitment issues",
+    "description": "Image pixelation & pixel art editor.",
+    "url": "https://mixel.michels.world",
+    "version": null
+  },
+  {
+    "id": "vector4ms",
+    "name": "SimpleV4Ms",
+    "subtitle": "Straight lines, strong opinions",
+    "description": "Client-side vector shape editor.",
+    "url": "https://vector4ms.michels.world",
+    "version": null
+  },
+  {
+    "id": "gifit",
+    "name": "GIF it to me Baby",
+    "subtitle": "Motion, but make it lossy",
+    "description": "Image-to-GIF converter & editor.",
+    "url": "https://gifit.michels.world",
+    "version": null
+  },
+  {
+    "id": "scanager",
+    "name": "Scanager",
+    "subtitle": "Turns your desk into a scanner",
+    "description": "Photo-to-PDF scanner with perspective correction.",
+    "url": "https://scanager.michels.world",
+    "version": "0.3.0"
+  },
+  {
+    "id": "json",
+    "name": "JSON is Coming",
+    "subtitle": "Brace yourself",
+    "description": "JSON editor & viewer.",
+    "url": "https://json.michels.world",
+    "version": null
+  },
+  {
+    "id": "kinkyletter",
+    "name": "Kinky Letter",
+    "subtitle": "DIN 5008, dressed to impress",
+    "description": "DIN 5008 business letter composer.",
+    "url": "https://kinkyletter.michels.world",
+    "version": null
+  },
+  {
+    "id": "prepare43w",
+    "name": "Prepare 4 3W",
+    "subtitle": "Favicons and other tiny miracles",
+    "description": "Favicon generator & web tooling suite.",
+    "url": "https://prepare43w.michels.world",
+    "version": null
+  },
+  {
+    "id": "que",
+    "name": "¿Qué?",
+    "subtitle": "Swipe right on Spanish",
+    "description": "German\u2013Spanish flashcard trainer, Tinder-style.",
+    "url": "https://que.michels.world",
+    "version": null
+  },
+  {
+    "id": "kluk",
+    "name": "K-L-U-K",
+    "subtitle": "Flashcards with a plan",
+    "description": "Chapter-based flashcard learning app.",
+    "url": "https://kluk.michels.world",
+    "version": null
+  },
+  {
+    "id": "gamble",
+    "name": "Gamble",
+    "subtitle": "Physics doesn't lie, dice do",
+    "description": "3D physics-based dice roller.",
+    "url": "https://gamble.michels.world",
+    "version": null
+  },
+  {
+    "id": "readitout",
+    "name": "Read it Out",
+    "subtitle": "Turns pixels into paragraphs",
+    "description": "OCR tool \u2014 turns images into text.",
+    "url": "https://readitout.michels.world",
+    "version": "0.1.0"
+  }
+]
