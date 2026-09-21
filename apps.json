@@ -94,5 +94,13 @@
     "description": "OCR tool \u2014 turns images into text.",
     "url": "https://readitout.michels.world",
     "version": "0.1.0"
+  },
+  {
+    "id": "qranything",
+    "name": "QR Anything",
+    "subtitle": "Give me a Quick Response!",
+    "description": "QR code generator with styling, logos & frames.",
+    "url": "https://qr.michels.world",
+    "version": "0.1.0"
   }
 ]
