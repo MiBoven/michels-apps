@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  const HUB_VERSION = "0.2.0";
+  const HUB_VERSION = "0.2.1";
   const LS_THEME = "ma_theme";
   const LS_FAVS = "ma_favorites";
   const LS_ORDER = "ma_order";

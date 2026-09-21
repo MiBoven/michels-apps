@@ -1,4 +1,4 @@
-const CACHE_NAME = "michels-apps-v0.2.0";
+const CACHE_NAME = "michels-apps-v0.2.1";
 const CORE_ASSETS = [
   "/",
   "/index.html",
@@ -35,17 +35,17 @@ self.addEventListener("fetch", (event) => {
   // reachability checks or the linked apps themselves.
   if (url.origin !== self.location.origin) return;
 
+  // Network-first: always try to get the latest version. Only fall
+  // back to the cache when there's no connection, so an update is
+  // visible on the very next load instead of waiting for a second
+  // reload to take over from a stale cached copy.
   event.respondWith(
-    caches.open(CACHE_NAME).then((cache) =>
-      cache.match(event.request).then((cached) => {
-        const fetchPromise = fetch(event.request)
-          .then((networkResponse) => {
-            cache.put(event.request, networkResponse.clone());
-            return networkResponse;
-          })
-          .catch(() => cached);
-        return cached || fetchPromise;
+    fetch(event.request)
+      .then((networkResponse) => {
+        const clone = networkResponse.clone();
+        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+        return networkResponse;
       })
-    )
+      .catch(() => caches.match(event.request))
   );
 });

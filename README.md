@@ -33,6 +33,9 @@ Edit `apps.json`. Each entry:
 
 ## Changelog
 
+### 0.2.1 — 2026-09-21 — Fix stale cache after updates
+- Service worker now fetches network-first instead of cache-first, so app-list and style updates show up on the next load instead of needing a second reload
+
 ### 0.2.0 — 2026-09-21 — Add QR Anything
 - Added QR Anything (qr.michels.world) to the app list
 
